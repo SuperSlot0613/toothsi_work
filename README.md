@@ -1,5 +1,10 @@
 # Getting Started with Create React App and Redux
 
+![SuperSlot React JS Toothsi Clone](image1.png?raw=true "SuperSlot React JS Toothsi Work")</br>
+![](image2.png?raw=true "SuperSlot React JS Toothsi Work")
+
+### <a href="https://toothsi-work-d507e0.netlify.app/">LIVE DEMO</a>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts
