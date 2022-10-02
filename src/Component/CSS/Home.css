@@ -1,0 +1,123 @@
+.Home_main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.home_cat {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+.home_catleft {
+  display: flex;
+  flex-direction: row;
+  float: inline-start;
+  align-items: center;
+  justify-content: "space-between";
+}
+.home_catleft2 > select,
+.home_catleft1 > select {
+  width: 150px;
+  color: rgba(118, 118, 118, 255);
+  font-size: 16px;
+  font-weight: 600;
+  height: 30px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 2px solid rgba(221, 221, 221, 255);
+  cursor: pointer;
+}
+
+.reset_btn > Button {
+  border: none !important;
+  height: 30px;
+  color: #56c1d6;
+}
+
+.home_catright {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: "space-between";
+  margin-left: 200px;
+}
+
+.home_catright > Button {
+  width: 240px !important;
+  height: 38px;
+  margin-left: 30px;
+  background: #01a0c4;
+  color: white;
+  font-size: 18px;
+}
+
+.home_catright > Button:hover {
+  background: #01a0c4;
+  color: white;
+}
+
+.home_product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+}
+
+.home_table > thead {
+  background: #f8f8f8;
+  font-size: 20px;
+  font-weight: 400;
+  border-bottom: 2px solid #b6b6b6;
+  color: #7f7f7f;
+}
+.image_th {
+  width: 160px !important;
+  height: 100px !important;
+}
+
+.image_th > img {
+  width: 120px !important;
+  height: 120px !important;
+}
+
+.procust_basket {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.procust_basket > input {
+  background: rgb(206, 202, 202);
+  width: 50px;
+  height: 35px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #7f7f7f;
+  border: 1px solid #f1f1f1;
+}
+
+.procust_basket > input:focus {
+  border: none;
+}
+
+.homebasket_icons {
+  display: flex;
+  background: #323232;
+  width: 63px;
+  height: 35px;
+  align-items: center;
+  justify-content: center;
+  color: white !important;
+}
+
+.homebasket_icons > Button {
+  color: white !important;
+}
