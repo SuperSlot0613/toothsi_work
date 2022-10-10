@@ -20,26 +20,28 @@ function Home() {
   const [sizeProduct, setsizeProduct] = useState("");
   const [searchData, setsearchData] = useState("");
 
-  const filterProduct = (types) => {
-    const result = Category.filter((curData) => {
-      return curData.category == types.toLowerCase();
-    });
-    setproductData(result);
+  const filterProduct = (types, option) => {
+    if (option === "typesProduct") {
+      const result = Category.filter((curData) => {
+        return curData.category == types.toLowerCase();
+      });
+      setproductData(result);
+    } else if (option === "size") {
+      console.log("This is other position");
+      const result = Category.filter((curData) => {
+        if (typesProduct != "") {
+          return (
+            curData.category == typesProduct.toLowerCase() &&
+            curData.size == types
+          );
+        } else {
+          return curData.size == types;
+        }
+      });
+      setproductData(result);
+    }
   };
 
-  const filterProductSize = (types) => {
-    const result = Category.filter((curData) => {
-      if (typesProduct !== null) {
-        return (
-          curData.category == typesProduct.toLowerCase() &&
-          curData.size == types
-        );
-      } else {
-        return curData.size == types;
-      }
-    });
-    setproductData(result);
-  };
 
   const getChckeboxValue = (countData, item) => {
     dispatch(
@@ -67,17 +69,17 @@ function Home() {
             <select
               value={typesProduct}
               onChange={(e) => {
-                if (e.target.value != "---") {
-                  settypesProduct(e.currentTarget.value);
-                  filterProduct(e.currentTarget.value);
+                if (e.target.value != "") {
+                  filterProduct(e.currentTarget.value, "typesProduct");
                 } else {
                   setproductData(Category);
                 }
+                settypesProduct(e.currentTarget.value);
               }}
               placeholder="Sort by"
             >
-              <option className="option" value="---">
-                ---
+              <option className="option" value="">
+                None
               </option>
               <option className="option" value="Hoodies">
                 Hoodies
@@ -97,17 +99,17 @@ function Home() {
             <select
               value={sizeProduct}
               onChange={(e) => {
-                if (e.target.value != "---") {
-                  setsizeProduct(e.currentTarget.value);
-                  filterProductSize(e.currentTarget.value);
+                if (e.target.value != "") {
+                  filterProduct(e.currentTarget.value, "size");
                 } else {
                   setproductData(Category);
                 }
+                setsizeProduct(e.currentTarget.value);
               }}
               placeholder="Sort by"
             >
-              <option className="option" value="---">
-                ---
+              <option className="option" value="">
+                None
               </option>
               <option className="option" value="S">
                 S
@@ -155,6 +157,7 @@ function Home() {
             aria-label="Search"
             onChange={(e) => setsearchData(e.target.value)}
             value={searchData}
+            disabled={typesProduct != "" ? true : false}
           />
           <Button
             onClick={() => {
